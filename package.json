@@ -1,0 +1,19 @@
+{
+  "name": "emergent-airways",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && npx wrangler pages deploy dist"
+  },
+  "devDependencies": {
+    "vite": "^6.1.0",
+    "wrangler": "^3.99.0"
+  },
+  "dependencies": {
+    "3d-tiles-renderer": "^0.4.21",
+    "three": "^0.182.0"
+  }
+}
