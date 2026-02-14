@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emergent Airways — F-16 Flight Simulator</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3L6 17h7v10h6V17h7z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+
+<!-- ===== START SCREEN ===== -->
+<div id="startScreen">
+  <div class="menu-bg">
+    <div class="menu-bg-base"></div>
+    <div class="menu-bg-grid"></div>
+    <div class="menu-bg-glow"></div>
+    <div class="menu-bg-haze"></div>
+    <div class="menu-particles">
+      <div class="menu-particle"></div><div class="menu-particle"></div><div class="menu-particle"></div>
+      <div class="menu-particle"></div><div class="menu-particle"></div><div class="menu-particle"></div>
+    </div>
+  </div>
+
+  <div class="menu-content">
+    <h1 class="start-title">Emergent Airways</h1>
+    <hr class="start-hr">
+    <div class="start-subtitle">F-16C Fighting Falcon</div>
+
+    <svg class="f16-hero" id="f16Hero" viewBox="0 0 1000 340" fill="none">
+      <defs>
+        <linearGradient id="bodyGrad" x1="0" y1="40" x2="0" y2="280" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#2a3a55"/><stop offset="100%" stop-color="#1a2540"/>
+        </linearGradient>
+        <linearGradient id="canopyFill" x1="240" y1="85" x2="240" y2="125" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="rgba(0,180,255,0.12)"/><stop offset="100%" stop-color="rgba(0,100,200,0.03)"/>
+        </linearGradient>
+      </defs>
+      <path d="M 18,155 C 30,153 55,144 95,136 C 130,130 175,124 225,121 C 275,118 330,117 400,118 C 500,119 620,119 710,118 C 760,117 810,118 850,123 C 880,127 910,134 935,145 Q 955,152 960,155 Q 955,158 935,165 C 910,172 880,178 850,182 C 810,186 760,187 710,187 C 620,188 500,188 400,187 C 330,187 275,186 225,184 C 175,182 130,176 95,170 C 55,162 30,157 18,155 Z" fill="url(#bodyGrad)"/>
+      <path d="M 18,155 C 30,153 55,144 95,136 C 130,130 175,124 225,121 C 275,118 330,117 400,118 C 500,119 620,119 710,118 C 760,117 810,118 840,121" stroke="rgba(0,212,255,0.12)" stroke-width="0.8" fill="none"/>
+      <path d="M 320,117 C 420,114 580,113 700,116" stroke="rgba(0,212,255,0.05)" stroke-width="0.6" fill="none"/>
+      <path d="M 215,121 C 218,112 228,100 245,93 C 258,88 272,88 283,93 C 293,98 300,108 305,121" fill="url(#canopyFill)" stroke="rgba(0,212,255,0.22)" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M 228,105 L 296,105" stroke="rgba(0,212,255,0.06)" stroke-width="0.5"/>
+      <path d="M 260,90 L 260,121" stroke="rgba(0,212,255,0.04)" stroke-width="0.5"/>
+      <path d="M 195,123 C 220,121 260,120 290,120 L 355,185 C 320,185 275,185 245,184 Z" fill="url(#bodyGrad)"/>
+      <path d="M 195,123 C 220,121 260,120 280,120" stroke="rgba(0,212,255,0.08)" stroke-width="0.6" fill="none"/>
+      <path d="M 200,185 C 205,195 212,205 225,212 L 360,212 C 365,205 368,195 368,185" fill="#0d1322"/>
+      <path d="M 205,185 L 365,185" stroke="rgba(255,255,255,0.04)" stroke-width="1.2"/>
+      <path d="M 395,186 C 380,210 358,248 340,275 C 420,276 510,276 575,275 C 585,248 595,215 605,184 Z" fill="url(#bodyGrad)"/>
+      <path d="M 395,186 C 380,210 358,248 340,275" stroke="rgba(0,212,255,0.08)" stroke-width="0.8" fill="none"/>
+      <path d="M 575,275 C 585,248 595,215 605,184" stroke="rgba(255,255,255,0.02)" stroke-width="0.5" fill="none"/>
+      <path d="M 420,186 C 412,210 400,240 390,260" stroke="rgba(255,255,255,0.03)" stroke-width="0.5" fill="none"/>
+      <path d="M 695,118 C 708,110 725,103 745,118" fill="url(#bodyGrad)"/>
+      <path d="M 745,118 C 755,95 772,60 792,35 C 802,22 818,14 835,12 C 850,11 860,16 868,25 C 876,38 880,58 882,85 L 884,118" fill="url(#bodyGrad)"/>
+      <path d="M 745,118 C 755,95 772,60 792,35 C 802,22 818,14 835,12" stroke="rgba(0,212,255,0.1)" stroke-width="0.8" fill="none"/>
+      <path d="M 845,18 C 855,50 870,90 878,118" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" fill="none"/>
+      <line x1="836" y1="12" x2="836" y2="2" stroke="rgba(0,212,255,0.08)" stroke-width="0.8"/>
+      <path d="M 848,186 C 842,210 832,240 825,260 C 870,261 920,261 955,260 C 956,235 957,210 958,184 Z" fill="url(#bodyGrad)"/>
+      <path d="M 848,186 C 842,210 832,240 825,260" stroke="rgba(0,212,255,0.06)" stroke-width="0.6" fill="none"/>
+      <path d="M 820,187 L 805,222 L 842,222 L 840,187 Z" fill="url(#bodyGrad)" opacity="0.7"/>
+      <ellipse cx="962" cy="155" rx="5" ry="22" fill="#0a0e18"/>
+      <ellipse cx="960" cy="155" rx="2" ry="24" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <ellipse cx="985" cy="155" rx="22" ry="12" fill="rgba(255,140,0,0.05)">
+        <animate attributeName="rx" values="22;30;22" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+      </ellipse>
+      <rect x="334" y="272" width="32" height="4" rx="2" fill="#1e2c44"/>
+      <circle cx="332" cy="274" r="2.5" fill="#151e30"/>
+      <rect x="361" y="268" width="1.5" height="12" fill="#1e2c44"/>
+      <rect x="352" y="268" width="1.5" height="12" fill="#1e2c44"/>
+      <line x1="4" y1="155" x2="18" y2="155" stroke="#1e2c44" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="18" cy="155" r="2.5" fill="#ff3333" opacity="0.7">
+        <animate attributeName="opacity" values="0.7;0.1;0.7" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="340" cy="275" r="2" fill="#00ff00" opacity="0.5">
+        <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="884" cy="118" r="1.5" fill="#ffffff" opacity="0.3">
+        <animate attributeName="opacity" values="0.3;0.05;0.3" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <g transform="translate(0,630) scale(1,-1)" opacity="0.04">
+        <path d="M 18,155 C 30,153 55,144 95,136 C 130,130 175,124 225,121 C 275,118 330,117 400,118 C 500,119 620,119 710,118 C 760,117 810,118 850,123 C 880,127 910,134 935,145 Q 955,152 960,155 Q 955,158 935,165 C 910,172 880,178 850,182 C 810,186 760,187 710,187 C 620,188 500,188 400,187 C 330,187 275,186 225,184 C 175,182 130,176 95,170 C 55,162 30,157 18,155 Z" fill="#2a3550"/>
+        <path d="M 395,186 L 340,275 L 575,275 L 605,184 Z" fill="#2a3550"/>
+      </g>
+    </svg>
+
+    <div class="search-container">
+      <div class="search-inner">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="#4a5568" stroke-width="2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search any location..." autocomplete="off">
+      </div>
+      <div class="search-dropdown" id="searchDropdown"></div>
+    </div>
+
+    <div class="locations-label">Select Location</div>
+    <div class="locations-grid" id="locationsGrid"></div>
+
+    <button id="startBtn" disabled>START FLIGHT <span class="btn-chevrons">&#x25B8;&#x25B8;</span></button>
+
+    <div class="view-controls-link" id="viewControlsBtn">VIEW CONTROLS</div>
+  </div>
+</div>
+
+<!-- ===== CONTROLS MODAL ===== -->
+<div id="controlsModal">
+  <div class="controls-modal-box">
+    <button class="controls-modal-close" id="closeControlsBtn">&times;</button>
+    <div class="controls-modal-title">Flight Controls</div>
+    <div class="ctrl-cols">
+      <div class="ctrl-col">
+        <h4>// FLIGHT</h4>
+        <div>&#x2191; / &#x2193; &mdash; Pitch down / up</div>
+        <div>&#x2190; / &#x2192; &mdash; Roll left / right</div>
+        <div>Q / E &mdash; Yaw left / right</div>
+        <div>Shift &mdash; Throttle up</div>
+        <div>Ctrl &mdash; Throttle down</div>
+        <h4>// TRIM</h4>
+        <div>+ / = &mdash; Trim nose up</div>
+        <div>- &mdash; Trim nose down</div>
+        <div>[ / ] &mdash; Trim roll L / R</div>
+        <div>T &mdash; Auto-trim</div>
+        <div>0 &mdash; Reset trim</div>
+      </div>
+      <div class="ctrl-col">
+        <h4>// SYSTEMS</h4>
+        <div>G &mdash; Landing gear</div>
+        <div>F &mdash; Flaps</div>
+        <div>B &mdash; Airbrake</div>
+        <h4>// WEAPONS</h4>
+        <div>1 &mdash; Guns (M61 Vulcan)</div>
+        <div>2 &mdash; Missiles (AIM-9)</div>
+        <div>3 &mdash; Bombs (Mk-82)</div>
+        <div>Space &mdash; Fire / release</div>
+        <h4>// CAMERA</h4>
+        <div>C &mdash; Cycle camera mode</div>
+        <div>V + Mouse &mdash; Free look</div>
+        <h4>// OTHER</h4>
+        <div>ESC &mdash; Pause menu</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FLIGHT TRANSITION ===== -->
+<div id="flightTransition"></div>
+
+<!-- ===== HUD ===== -->
+<div id="hud">
+  <div class="hud-text" id="hudCamMode">CHASE CAM</div>
+  <div class="hud-text" id="hudAirspeed">300</div>
+  <div class="hud-text" id="hudAirspeedLabel">KTS</div>
+  <div class="hud-text" id="hudMach">M 0.45</div>
+  <div class="hud-text" id="hudAltitude">5000</div>
+  <div class="hud-text" id="hudAltLabel">FT MSL</div>
+  <div class="hud-text" id="hudRadarAlt"></div>
+  <div class="hud-text" id="hudHeading">360</div>
+  <div class="hud-text" id="hudHeadingLabel">HDG</div>
+  <div class="hud-text" id="hudGforce">G 1.0</div>
+  <div class="hud-text" id="hudThrottle">THR 70%</div>
+  <div class="hud-text" id="hudWeapon">M61 VULCAN  511</div>
+  <div class="hud-text" id="hudCoords"></div>
+  <div class="hud-text" id="hudGear"></div>
+  <div class="hud-text" id="hudFlaps"></div>
+  <div class="hud-text" id="hudBrake"></div>
+  <div class="hud-text" id="hudWarning"></div>
+  <div class="hud-text" id="hudTrim" style="left:50%;bottom:40px;transform:translateX(-50%);font-size:10px;color:#00aa33;top:auto"></div>
+  <div class="hud-text" id="hudTileHint"></div>
+  <div id="hudCenter">
+    <div id="hudHorizon"></div>
+    <div id="hudPitchLadder"></div>
+    <div id="hudFPM"><div id="hudFPMtop"></div></div>
+    <div id="hudGunCross"><div class="gc-h"></div><div class="gc-v"></div><div class="gc-dot"></div></div>
+  </div>
+</div>
+
+<!-- ===== PAUSE MENU ===== -->
+<div id="pauseMenu">
+  <div class="pause-content">
+    <h2 style="font-size:36px;color:#00ff41;margin-bottom:20px;letter-spacing:6px">PAUSED</h2>
+    <div style="display:flex;gap:30px;margin-bottom:20px;font-size:11px;color:#00ff41;text-align:left;font-family:monospace;max-width:700px">
+      <div><b>FLIGHT</b><br>&#x2191;/&#x2193; - Pitch down/up<br>&#x2190;/&#x2192; - Roll left/right<br>Q/E - Yaw left/right<br>Shift - Throttle up<br>Ctrl - Throttle down<br><br><b>TRIM</b><br>+/= - Trim nose up<br>- &nbsp;- Trim nose down<br>[ &nbsp;- Trim roll left<br>] &nbsp;- Trim roll right<br>T &nbsp;- Auto-trim<br>0 &nbsp;- Reset trim</div>
+      <div><b>SYSTEMS</b><br>G - Landing gear<br>F - Flaps<br>B - Airbrake<br><br><b>WEAPONS</b><br>1 - Guns (M61)<br>2 - Missiles (AIM-9)<br>3 - Bombs (Mk-82)<br>Space - Fire/release<br><br><b>CAMERA</b><br>C - Cycle camera<br>V+Mouse - Free look<br><br><b>OTHER</b><br>ESC - Pause</div>
+    </div>
+    <button class="pause-btn" id="resumeBtn">RESUME</button>
+    <button class="pause-btn" id="rearmBtn">REARM</button>
+    <button class="pause-btn" id="restartBtn">RETURN TO MENU</button>
+  </div>
+</div>
+
+<!-- ===== LOADING OVERLAY ===== -->
+<div id="loadingOverlay">
+  <div class="load-title">EMERGENT AIRWAYS</div>
+  <svg class="load-f16" viewBox="0 0 1000 340" fill="none">
+    <path d="M 18,155 C 30,153 55,144 95,136 C 130,130 175,124 225,121 C 275,118 330,117 400,118 C 500,119 620,119 710,118 C 760,117 810,118 850,123 C 880,127 910,134 935,145 Q 955,152 960,155 Q 955,158 935,165 C 910,172 880,178 850,182 C 810,186 760,187 710,187 C 620,188 500,188 400,187 C 330,187 275,186 225,184 C 175,182 130,176 95,170 C 55,162 30,157 18,155 Z" fill="#1a2540"/>
+    <path d="M 395,186 C 380,210 358,248 340,275 C 420,276 510,276 575,275 C 585,248 595,215 605,184 Z" fill="#1a2540"/>
+    <path d="M 745,118 C 755,95 772,60 792,35 C 802,22 818,14 835,12 C 850,11 860,16 868,25 C 876,38 880,58 882,85 L 884,118" fill="#1a2540"/>
+    <path d="M 848,186 C 842,210 832,240 825,260 C 870,261 920,261 955,260 C 956,235 957,210 958,184 Z" fill="#1a2540"/>
+  </svg>
+  <div class="load-bar-container">
+    <div class="load-bar-fill" id="loadingFill"></div>
+  </div>
+  <div class="load-status" id="loadingStatus">INITIALIZING SYSTEMS...</div>
+  <div class="load-hint">Tiles stream in real-time. Fly in circles over new areas for higher detail.</div>
+</div>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
